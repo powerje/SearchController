@@ -28,6 +28,7 @@ class ViewController: UITableViewController {
     // the system animation of the search bar to complete properly.
     private var lastContentOffset: CGFloat = 0
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard #available(iOS 13, *) else { return }
         let searchBar = searchController.searchBar
 
         if lastContentOffset > scrollView.contentOffset.y {
