@@ -1,20 +1,25 @@
-//
-//  ViewController.swift
-//  SearchController
-//
-//  Created by James Power on 4/24/20.
-//  Copyright © 2020 James Power. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+
+    private let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        searchController.searchBar.scopeButtonTitles = ["Scope 1", "Scope 2"]
+        navigationItem.searchController = searchController
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "Row \(indexPath.row)"
+        return cell
+    }
 
 }
 
