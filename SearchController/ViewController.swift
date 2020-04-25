@@ -14,6 +14,19 @@ class ViewController: UITableViewController {
         navigationItem.searchController = searchController
     }
 
+    override func viewDidLayoutSubviews() {
+        defer { super.viewDidLayoutSubviews() }
+        guard #available(iOS 13.0, *) else {
+            searchController.hidesNavigationBarDuringPresentation = false
+            // The cancel button has to go entirely, otherwise the scopes disappear _forever_
+            // upon canceling - regardless of the setting above.
+            searchController.searchBar.showsCancelButton = false
+            // Have to make it active otherwise it overlaps with the cells of the UITableView.
+            searchController.isActive = true
+            return
+        }
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
@@ -26,7 +39,7 @@ class ViewController: UITableViewController {
 
     // HAX: this hides and shows the scope bar appropriately to allow
     // the system animation of the search bar to complete properly.
-    private var lastContentOffset: CGFloat = 0
+    private var lastContentOffset = CGFloat(0)
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard #available(iOS 13, *) else { return }
         let searchBar = searchController.searchBar
