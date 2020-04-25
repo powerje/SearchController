@@ -8,6 +8,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
 
         searchController.searchBar.scopeButtonTitles = ["Scope 1", "Scope 2"]
+        searchController.searchBar.showsScopeBar = true
         navigationItem.searchController = searchController
     }
 
