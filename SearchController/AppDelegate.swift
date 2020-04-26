@@ -1,4 +1,5 @@
 import UIKit
+import WindowsAzureMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = UINavigationController(rootViewController: ViewController())
         window!.makeKeyAndVisible()
 
+        let localStorage = SBLocalStorage()
+    
         return true
     }
 
