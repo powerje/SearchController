@@ -183,7 +183,7 @@ With these settings in place on iOS 12 we have (admittedly more mundane) search+
 
 ## Lessons Learned
 
-UISearchController gives us some pretty neat animations that look great and feel right at home to users. Unfortunately there are some quirks that make it a more daunting solution to use than one would prefer. That said, it's probably worth the effort in this case. Unfortunately we're leaving iOS 12 users with a less aesthetic experience.
+UISearchController gives us some pretty neat animations that look great and feels natural to users. Unfortunately there are some quirks that make it a more daunting solution to use than one would prefer. That said, it's probably worth the effort in this case. Unfortunately we're leaving iOS 12 users with a less aesthetic experience.
 
 Did I miss anything obvious? Is there a better way to handle this? Please let me know by opening an issue here or reaching out on Twitter ([@powerje](https://twitter.com/powerje)).
 
