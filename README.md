@@ -96,7 +96,7 @@ Conversely, if the user is scrolling towards the bottom of the list and we are s
 
 Okay, so this actually looks pretty good! Other than hard coding the expected UISearchBar height I feel fairly okay with this. So, we're done right?
 
-Ugh, nope - this app  supports iOS 12 (otherwise we'd be using SwitchUI naturally!). What's this look like on iOS 12?
+Ugh, nope - this app  supports iOS 12 (otherwise we'd be using SwiftUI, probably). What's this look like on iOS 12?
 
 First, by default on iOS 12 the search functionality is hidden underneath the navigation bar by default. We could probably deal with that but this is what it looks like with our current code upon launching:
 
